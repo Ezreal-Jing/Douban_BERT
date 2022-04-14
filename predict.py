@@ -21,9 +21,8 @@ def getDictKey(myDict, value):
 
 def predict(text):
     # tokenizer = BertTokenizer(vocab_file='bert-base-chinese/vocab.txt')
-    config = BertConfig.from_pretrained('cache/config.json')
-    model = BertForSequenceClassification.from_pretrained('cache/pytorch_model.bin',
-                                                          from_tf=bool('.ckpt' in 'bert-base-chinese'), config=config)
+    # config = BertConfig.from_pretrained('cache/config.json')
+    model = BertForSequenceClassification.from_pretrained('cache')
     model.eval()
 
 
