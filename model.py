@@ -24,11 +24,11 @@ import matplotlib.pyplot as plt
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def train(batch_size,EPOCHS):
-    # model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=5)
+    # model = BertForSequenceClassification.from_pretrained("bert-base-chinese", num_labels=5)使用bert-base-chinese预训练模型
 
-    # model = BertForSequenceClassification.from_pretrained("bert-base-chinese", num_labels=5)
-
-    model = BertForSequenceClassification.from_pretrained("chinese-bert-wwm", num_labels=5)#
+    model = BertForSequenceClassification.from_pretrained("hfl/chinese-bert-wwm", num_labels=5)#使用chinese-bert-wwm预训练模型
+    
+    # model = BertForSequenceClassification.from_pretrained("hfl/chinese-roberta-wwm-ext", num_labels=5)#使用hfl/chinese-roberta-wwm-ext预训练模型
 
     train = read_data('data/train.csv')
     val = read_data('data/test.csv')
